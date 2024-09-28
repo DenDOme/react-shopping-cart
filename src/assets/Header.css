@@ -1,0 +1,21 @@
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.logo{
+    font-size: 45px;
+}
+
+.header-link{
+    font-size: 23px;
+}

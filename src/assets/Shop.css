@@ -1,0 +1,10 @@
+.shop-title{
+    text-align: center;
+}
+
+.shop{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 30px;    
+}
