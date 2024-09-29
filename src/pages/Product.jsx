@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import '../assets/Product.css'
 import Header from "../components/Header";
+import { useCart } from "../context/CartContext";
 
 function Product(){
     const { id } = useParams();
     const [product, setProduct] = useState(null);
+    const { addToCart } = useCart(); 
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${id}`)
@@ -13,6 +15,10 @@ function Product(){
             .then(res=> setProduct(res))
             .catch(err=>console.error(err))
     }, [id])
+
+    const handleAddToCart = () => {
+        addToCart(product); 
+    };
 
     if(!product){
         return (<div>Loading...</div>)
@@ -33,6 +39,7 @@ function Product(){
                     <div className="product__rating">Rating: {product.rating.rate} ({product.rating.count} reviews)</div>
                 </div>
                 <div className="product__details">{product.description}</div>
+                <button onClick={handleAddToCart}>Add to Cart</button> 
             </div>
         </div>
         </>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import ShoppingCart from "./ShoppingCart"
 import '../assets/Header.css'
+
 function Header(){
     return (
         <>
